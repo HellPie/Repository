@@ -50,7 +50,6 @@ $(NAME): $(OBJ)
 # Build a single source file into its correspondent object file
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(info Building $@ from $< as it was new or changed)
-	@mkdir -p $$(dirname $@)
 	@$(CC) $(CFLAGS) -I. -c $< -o $@
 
 all: $(NAME)
