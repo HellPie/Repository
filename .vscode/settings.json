@@ -1,8 +1,0 @@
-{
-	"files.associations": {
-		"*.db": "sqlite",
-		"ft_ctype.h": "c",
-		"libft.h": "c",
-		"ostream": "c"
-	}
-}
