@@ -6,11 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:16:17 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/18 20:53:44 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:41:09 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_defs.h"
+#include "libft.h"
 
 int	ft_memcmp(const void *v1, const void *v2, size_t n)
 {

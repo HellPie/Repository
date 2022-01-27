@@ -6,11 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 14:12:53 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/19 15:27:14 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:42:59 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_defs.h"
+#include "libft.h"
 
 char	*ft_strstr(const char *h, const char *n)
 {

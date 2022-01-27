@@ -6,12 +6,12 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 19:17:13 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/19 19:24:33 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:43:45 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "ft_extra.h"
+#include "libft.h"
 
 static size_t	_wlen(char const *s, char c)
 {

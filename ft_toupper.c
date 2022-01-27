@@ -6,11 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 14:18:36 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/18 19:12:48 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:42:59 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ctype.h"
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

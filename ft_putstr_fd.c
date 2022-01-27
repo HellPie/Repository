@@ -6,12 +6,12 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 21:57:36 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/19 22:08:41 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:43:23 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "ft_string.h"
+#include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {

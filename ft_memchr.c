@@ -6,11 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:34:58 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/18 23:44:48 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:41:09 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_defs.h"
+#include "libft.h"
 
 /**
  * WARN: GNU(-like) implementations have quirks which BSD(-like) lacks.

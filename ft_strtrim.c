@@ -6,12 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 19:10:48 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/21 17:53:37 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:42:59 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
-#include "ft_extra.h"
+#include "libft.h"
 
 char	*ft_strtrim(char const *s)
 {

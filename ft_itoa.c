@@ -6,18 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 19:24:46 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/19 22:39:51 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:57:38 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_extra.h"
-
-static unsigned int	_abs(int i)
-{
-	if (i > 0)
-		return (i);
-	return (-i);
-}
+#include "libft.h"
 
 char	*ft_itoa(int n)
 {
@@ -25,7 +18,7 @@ char	*ft_itoa(int n)
 	int				length;
 	unsigned int	value;
 
-	value = _abs(n);
+	value = ft_abs(n);
 	length = n <= 0;
 	while (value)
 	{
@@ -35,7 +28,7 @@ char	*ft_itoa(int n)
 	str = ft_strnew(length);
 	if (!str)
 		return (NULL);
-	value = _abs(n);
+	value = ft_abs(n);
 	while (--length >= 0)
 	{
 		str[length] = value % 10 + '0';

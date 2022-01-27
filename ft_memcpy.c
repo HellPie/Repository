@@ -6,11 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 15:24:44 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/18 23:49:40 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:41:09 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_defs.h"
+#include "libft.h"
 
 /**
  * WARN: This is inefficient, it lacks overlap fail-fast checks, but it works.

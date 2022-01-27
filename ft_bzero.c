@@ -6,11 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 00:02:12 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/19 00:04:05 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:41:09 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

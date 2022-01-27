@@ -6,12 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 19:02:46 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/21 17:51:30 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/27 01:42:59 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
-#include "ft_extra.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
