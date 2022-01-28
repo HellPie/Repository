@@ -6,10 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 00:01:21 by drossi            #+#    #+#             */
-/*   Updated: 2022/01/29 00:55:26 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/29 01:22:20 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *))
