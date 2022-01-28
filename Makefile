@@ -6,7 +6,7 @@
 #    By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 13:03:52 by drossi            #+#    #+#              #
-#    Updated: 2022/01/27 02:23:49 by drossi           ###   ########.fr        #
+#    Updated: 2022/01/29 00:56:45 by drossi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ SRC := ./ft_strncat.c ./ft_isdigit.c \
        ./ft_putstr.c ./ft_strlcat.c \
        ./ft_strdup.c ./ft_atoi.c \
        ./ft_isalnum.c ./ft_itoa.c ./ft_striter.c \
-       ./ft_strsub.c ./ft_strncpy.c ./ft_tolower.c ./ft_strcmp.c
+       ./ft_strsub.c ./ft_strncpy.c ./ft_tolower.c ./ft_strcmp.c \
+       ./ft_lstnew.c ./ft_lstdelone.c ./ft_lstdel.c ./ft_lstadd.c \
+       ./ft_lstiter.c ./ft_lstmap.c
 OBJ := $(patsubst %.c,%.o,$(SRC))
 
 # Compiler flags and defaults
