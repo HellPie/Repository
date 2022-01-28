@@ -6,7 +6,7 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 18:31:57 by drossi            #+#    #+#             */
-/*   Updated: 2022/01/27 02:37:00 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/29 01:21:55 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
+int			ft_isspace(int c);
 int			ft_isprint(int c);
+int			ft_islower(int c);
+int			ft_isupper(int c);
 
 int			ft_tolower(int c);
 int			ft_toupper(int c);
@@ -70,11 +73,17 @@ char		*ft_strstr(const char *h, const char *n);
 
 size_t		ft_strlen(const char *s);
 
+char		*ft_stpcpy(char *dest, const char *src);
+char		*ft_stpncpy(char *dest, const char *src, size_t n);
+size_t		ft_strnlen(const char *s1, size_t len);
 char		*ft_strdup(const char *s);
 
 size_t		ft_strlcat(char *dest, const char *src, size_t n);
+size_t		ft_strlcpy(char *s1, const char *s2, size_t len);
 
 void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void		*ft_memrchr(const void *m, int c, size_t n);
+char		*ft_strchrnul(const char *s, int c);
 
 void		ft_bzero(void *s, size_t n);
 

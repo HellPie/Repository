@@ -6,7 +6,7 @@
 #    By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 13:03:52 by drossi            #+#    #+#              #
-#    Updated: 2022/01/29 00:56:45 by drossi           ###   ########.fr        #
+#    Updated: 2022/01/29 01:22:06 by drossi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,16 @@ SRC := ./ft_strncat.c ./ft_isdigit.c \
        ./ft_strrchr.c ./ft_isalpha.c ./ft_memchr.c ./ft_strmap.c \
        ./ft_putchar_fd.c ./ft_memset.c ./ft_strncmp.c \
        ./ft_strcpy.c ./ft_strmapi.c ./ft_strtrim.c \
-       ./ft_memdel.c ./ft_memmove.c ./ft_abs.c ./ft_strnew.c \
+       ./ft_memdel.c ./ft_memmove.c ./ft_strnew.c \
        ./ft_putstr.c ./ft_strlcat.c \
        ./ft_strdup.c ./ft_atoi.c \
        ./ft_isalnum.c ./ft_itoa.c ./ft_striter.c \
        ./ft_strsub.c ./ft_strncpy.c ./ft_tolower.c ./ft_strcmp.c \
        ./ft_lstnew.c ./ft_lstdelone.c ./ft_lstdel.c ./ft_lstadd.c \
-       ./ft_lstiter.c ./ft_lstmap.c
+       ./ft_lstiter.c ./ft_lstmap.c \
+       ./ft_memrchr.c ./ft_stpcpy.c ./ft_islower.c ./ft_abs.c \
+       ./ft_strchrnul.c ./ft_strnlen.c ./ft_strlcpy.c ./ft_isspace.c \
+       ./ft_stpncpy.c ./ft_islower.c
 OBJ := $(patsubst %.c,%.o,$(SRC))
 
 # Compiler flags and defaults
