@@ -6,7 +6,7 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 00:01:21 by drossi            #+#    #+#             */
-/*   Updated: 2022/01/29 01:22:20 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/29 19:48:34 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *))
 	t_list	*head;
 	t_list	*current;
 
-	head = NULL;
-	while (lst != NULL)
+	if (lst == NULL)
+		return (NULL);
+	head = f(lst);
+	current = head;
+	while (lst->next != NULL)
 	{
-		current = f(lst);
-		if (current == NULL)
+		current->next = f(lst->next);
+		if (current->next == NULL)
 		{
 			while (head != NULL)
 			{
@@ -32,8 +35,6 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *))
 			}
 			return (NULL);
 		}
-		if (head == NULL)
-			head = current;
 		lst = lst->next;
 		current = current->next;
 	}
