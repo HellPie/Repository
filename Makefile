@@ -6,7 +6,7 @@
 #    By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 13:03:52 by drossi            #+#    #+#              #
-#    Updated: 2022/01/29 01:22:06 by drossi           ###   ########.fr        #
+#    Updated: 2022/01/29 17:34:15 by drossi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME := libft.a
 
 # Sources and objects
 INC := .
-SRC := ./ft_strncat.c ./ft_isdigit.c \
+SRC := ./ft_strncat.c ./ft_strnstr.c ./ft_isdigit.c \
        ./ft_putstr_fd.c ./ft_strequ.c ./ft_strlen.c \
        ./ft_memcmp.c ./ft_putnbr.c \
        ./ft_strclr.c ./ft_strsplit.c ./ft_putnbr_fd.c \
@@ -35,7 +35,7 @@ SRC := ./ft_strncat.c ./ft_isdigit.c \
        ./ft_lstiter.c ./ft_lstmap.c \
        ./ft_memrchr.c ./ft_stpcpy.c ./ft_islower.c ./ft_abs.c \
        ./ft_strchrnul.c ./ft_strnlen.c ./ft_strlcpy.c ./ft_isspace.c \
-       ./ft_stpncpy.c ./ft_islower.c
+       ./ft_stpncpy.c ./ft_islower.c ./ft_isupper.c
 OBJ := $(patsubst %.c,%.o,$(SRC))
 
 # Compiler flags and defaults

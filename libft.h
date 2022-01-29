@@ -6,7 +6,7 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 18:31:57 by drossi            #+#    #+#             */
-/*   Updated: 2022/01/29 01:21:55 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/29 17:35:36 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ char		*ft_strdup(const char *s);
 
 size_t		ft_strlcat(char *dest, const char *src, size_t n);
 size_t		ft_strlcpy(char *s1, const char *s2, size_t len);
+
+char		*ft_strnstr(const char *h, const char *f, size_t n);
 
 void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void		*ft_memrchr(const void *m, int c, size_t n);
