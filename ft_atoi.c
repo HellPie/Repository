@@ -6,12 +6,12 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 19:43:04 by drossi            #+#    #+#             */
-/*   Updated: 2022/01/29 18:10:19 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/29 18:11:26 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 int	ft_atoi(const char *s)
 {
 	long	number;
