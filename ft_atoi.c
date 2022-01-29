@@ -6,7 +6,7 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 19:43:04 by drossi            #+#    #+#             */
-/*   Updated: 2022/01/29 18:11:26 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/29 18:24:13 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_atoi(const char *s)
 	{
 		number = 10 * number - (*s++ - '0');
 		if (number > 2147483647 && !is_negative)
-			return (2147483647);
+			return (-1);
 		else if (number < -2147483648L && is_negative)
-			return (-2147483648U);
+			return (0);
 	}
 	if (is_negative)
 		return ((int)number);
