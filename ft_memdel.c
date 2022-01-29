@@ -6,7 +6,7 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 18:28:36 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/19 18:29:13 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/29 17:38:22 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_memdel(void **ap)
 {
+	if (ap == NULL)
+		return ;
 	free(*ap);
 	*ap = NULL;
 }

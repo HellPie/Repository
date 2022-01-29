@@ -6,7 +6,7 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 18:32:14 by drossi            #+#    #+#             */
-/*   Updated: 2022/01/27 01:42:59 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/29 17:44:55 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_strclr(char *s)
 {
+	if (s == NULL)
+		return ;
 	ft_bzero((void *)s, ft_strlen(s));
 }
