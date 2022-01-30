@@ -6,15 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:04:06 by drossi            #+#    #+#             */
-/*   Updated: 2022/01/27 01:47:41 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/31 00:33:17 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/**
- * TODO: Figure out why the test suite fails. This happens on libc memmove too.
- */
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

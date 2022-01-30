@@ -6,12 +6,16 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 19:17:13 by drossi            #+#    #+#             */
-/*   Updated: 2022/01/27 01:43:45 by drossi           ###   ########.fr       */
+/*   Updated: 2022/01/31 00:33:17 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
+
+/**
+ * TODO: Slim strsplit down to 2 functions or ideally a single one.
+ */
 
 static size_t	_wlen(char const *s, char c)
 {
