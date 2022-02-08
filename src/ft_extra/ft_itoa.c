@@ -6,10 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 19:24:46 by drossi            #+#    #+#             */
-/*   Updated: 2022/02/08 15:44:22 by drossi           ###   ########.fr       */
+/*   Updated: 2022/02/08 16:11:40 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_stdlib.h"
 #include "ft_extra.h"
 
 char	*ft_itoa(int n)

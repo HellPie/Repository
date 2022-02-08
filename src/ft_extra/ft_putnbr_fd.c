@@ -6,10 +6,11 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 22:01:52 by drossi            #+#    #+#             */
-/*   Updated: 2022/02/08 15:44:22 by drossi           ###   ########.fr       */
+/*   Updated: 2022/02/08 16:11:58 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_stdlib.h"
 #include "ft_extra.h"
 
 void	ft_putnbr_fd(int n, int fd)
