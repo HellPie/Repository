@@ -6,7 +6,7 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 03:09:18 by drossi            #+#    #+#             */
-/*   Updated: 2021/11/19 13:41:59 by drossi           ###   ########.fr       */
+/*   Updated: 2022/03/18 14:08:53 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 
 # define TRUE (1)
 # define FALSE (0)
+
 typedef int					t_bool;
 
 /**
@@ -52,9 +53,13 @@ typedef unsigned long		t_ulong;
 typedef unsigned long long	t_ullong;
 
 # if __SIZEOF_POINTER__ == 8
+
 typedef t_uint64			t_uintptr;
+
 # elif __SIZEOF_POINTER == 4
+
 typedef t_uint32			t_uintptr;
+
 # else
 #  error "__SIZEOF_POINTER undefined or using an invalid value (not 8 or 4)"
 # endif
