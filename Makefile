@@ -6,7 +6,7 @@
 #    By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 13:03:52 by drossi            #+#    #+#              #
-#    Updated: 2022/03/18 14:31:52 by drossi           ###   ########.fr        #
+#    Updated: 2022/03/19 15:17:07 by drossi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ_DIR := build
 
 # Sources and objects
 INC := include
-SRC := $(wildcard $(SRC_DIR)/**.c)
+SRC := $(wildcard $(SRC_DIR)/**/*.c)
 OBJ := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
 # Compiler flags and defaults
@@ -86,7 +86,7 @@ clean:
 	@rm -rf $(OBJ_DIR)
 	$(info Removing debug symbols and test libraries if they exist)
 	@rm -rf test/include/cheat.h test/include/cheats.h
-	@rm *.dSYM
+	@rm -f *.dSYM
 
 fclean: clean
 	$(info Removing $(NAME) if it exists)
