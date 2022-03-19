@@ -6,7 +6,7 @@
 #    By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 13:03:52 by drossi            #+#    #+#              #
-#    Updated: 2021/11/15 23:06:45 by drossi           ###   ########.fr        #
+#    Updated: 2022/03/18 14:31:52 by drossi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,18 @@ OBJ_DIR := build
 
 # Sources and objects
 INC := include
-SRC := $(wildcard $(SRC_DIR)/*/*.c)
+SRC := $(wildcard $(SRC_DIR)/**.c)
 OBJ := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
 # Compiler flags and defaults
 CC ?= gcc
 CFLAGS += -Wall -Werror -Wextra
+
+ifeq ($(DEBUG),1)
+	$(info Configuring additional debug options.)
+	CFLAGS += -fsanitize=address,undefined -fno-sanitize-recover=all
+	CFLAGS += -g -DDEBUG
+endif
 
 # Archiver flags and defaults
 AR ?= ar
@@ -35,6 +41,9 @@ TEST := $(wildcard test/*.c)
 TESTLIB := https://github.com/Tuplanolla/cheat/raw/1.0.4
 TEST_CFLAGS += -g -DDEBUG -I./test -I./test/include -I./$(INC_DIR)
 TEST_CFLAGS += -D__BASE_FILE__=\"tests.c\" -Wno-builtin-macro-redefined
+
+# Norminette configuration
+NORMINETTE ?= python3 -m norminette
 
 # Build, archive and index the static library
 $(NAME): $(OBJ)
@@ -50,35 +59,41 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 all: $(NAME)
 
+debug:
+	$(info Compiling $(NAME) with debug flags)
+debug: CFLAGS += -fsanitize=address,undefined -fno-sanitize-recover=all
 debug: CFLAGS += -g -DDEBUG
-debug: all
+debug: re
+
+norme:
+	$(info Running Norminette ($(shell $(NORMINETTE) -v)) compliance tests)
+	@$(NORMINETTE) $(wildcard $(INC)/**.h) $(SRC) | grep "Error\|Warn"; exit 0
 
 setup_dev:
 	$(info Readying dev environment relying on CHEAT from $(TESTLIB))
 	@curl -s -L $(TESTLIB)/cheat.h -o test/include/cheat.h
 	@curl -s -L $(TESTLIB)/cheats.h -o test/include/cheats.h
 
-test: setup_dev
+test: norme setup_dev debug
 	$(info Tests rely on CHEAT from $(TESTLIB))
-	@echo "Running Norminette ($$(python -m norminette -v)) compliance tests"
-	@python -m norminette $(INC) $(SRC) | grep "Error\|Warn"; exit 0
-	@echo "Compiling $(NAME) and tests with debug flags"
-	@$(MAKE) debug > /dev/null
 	@$(CC) $(TEST_CFLAGS) $(TEST) $(NAME) -o ftlib_test
 	@echo "Running tests using CHEAT suite"
 	@./ftlib_test --colorful --timed --noisy; exit 0
-	@echo "Cleaning up after test run completed"
-	@rm -rf test/include/cheat.h test/include/cheats.h ftlib_test *.dSYM
-	@$(MAKE) fclean > /dev/null
+test: fclean
 
 clean:
 	$(info Removing all objects and $(OBJ_DIR) if it exists)
 	@rm -rf $(OBJ_DIR)
+	$(info Removing debug symbols and test libraries if they exist)
+	@rm -rf test/include/cheat.h test/include/cheats.h
+	@rm *.dSYM
 
 fclean: clean
 	$(info Removing $(NAME) if it exists)
 	@rm -f $(NAME)
+	$(info Removing testing outputs if they exist)
+	@rm -f ftlib_test
 
 re: fclean all
 
-.PHONY: debug setup_dev test all clean fclean re
+.PHONY: debug norme setup_dev test all clean fclean re
