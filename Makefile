@@ -6,7 +6,7 @@
 #    By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 13:03:52 by drossi            #+#    #+#              #
-#    Updated: 2022/03/21 19:56:06 by drossi           ###   ########.fr        #
+#    Updated: 2022/03/21 20:34:50 by drossi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,19 +74,13 @@ norme:
 	$(info Running Norminette ($(shell $(NORMINETTE) -v)) compliance tests)
 	@$(NORMINETTE) $(wildcard $(INC)/**.h) $(SRC) | grep "Error\|Warn"; exit 0
 
-ifeq ($(shell uname -s),Linux)
-symbols: CFLAGS += -fPIC
-symbols: $(LFT_OBJ) $(GNL_OBJ)
+symbols: $(OBJ)
 	$(info Verifying usage of undefined (external) symbols)
-	@rm -f $(OBJ_DIR)/out.o
-	@$(CC) -Wl,--whole-archive $(LFT_OBJ) -Wl,--no-whole-archive -shared $(GNL_OBJ) -o $(OBJ_DIR)/out.o
-	@nm -uP $(OBJ_DIR)/out.o | grep -w "U"
-	@rm -f $(OBJ_DIR)/out.o $(LFT_OBJ) $(GNL_OBJ)
+	@ld -r $(OBJ) -o $(OBJ_DIR)/libft.o
+	@nm -uP $(OBJ_DIR)/libft.o | grep -w "U"
+	@rm -f $(OBJ_DIR)/libft.o
 
-test: symbols
-endif
-
-test: norme setup_dev debug
+test: norme symbols setup_dev debug
 	$(info Tests rely on CHEAT from $(TESTLIB))
 	@$(CC) $(TEST_CFLAGS) $(TEST) $(NAME) -o ftlib_test
 	@echo "Running tests using CHEAT suite"
