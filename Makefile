@@ -6,7 +6,7 @@
 #    By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 13:03:52 by drossi            #+#    #+#              #
-#    Updated: 2022/03/21 20:34:50 by drossi           ###   ########.fr        #
+#    Updated: 2022/03/21 20:57:10 by drossi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,27 +78,28 @@ symbols: $(OBJ)
 	$(info Verifying usage of undefined (external) symbols)
 	@ld -r $(OBJ) -o $(OBJ_DIR)/libft.o
 	@nm -uP $(OBJ_DIR)/libft.o | grep -w "U"
-	@rm -f $(OBJ_DIR)/libft.o
+	@$(RM) $(OBJ_DIR)/libft.o
 
 test: norme symbols setup_dev debug
 	$(info Tests rely on CHEAT from $(TESTLIB))
 	@$(CC) $(TEST_CFLAGS) $(TEST) $(NAME) -o ftlib_test
 	@echo "Running tests using CHEAT suite"
-	@./ftlib_test --colorful --timed --noisy; exit 0
+	@./ftlib_test --colorful --timed --noisy & exit 0
+	@$(RM) ftlib_test
 test: fclean
 
 clean:
 	$(info Removing all objects and $(OBJ_DIR) if it exists)
-	@rm -rf $(OBJ_DIR)
+	@$(RM) -r $(OBJ_DIR)
 	$(info Removing debug symbols and test libraries if they exist)
-	@rm -rf test/include/cheat.h test/include/cheats.h
-	@rm -f *.dSYM
+	@$(RM) -r test/include/cheat.h test/include/cheats.h
+	@$(RM) *.dSYM
 
 fclean: clean
 	$(info Removing $(NAME) if it exists)
-	@rm -f $(NAME)
+	@$(RM) $(NAME)
 	$(info Removing testing outputs if they exist)
-	@rm -f ftlib_test
+	@$(RM) ftlib_test
 
 re: fclean all
 
