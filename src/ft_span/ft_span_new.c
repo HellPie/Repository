@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_span.h                                          :+:      :+:    :+:   */
+/*   ft_span_new.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 13:51:33 by drossi            #+#    #+#             */
-/*   Updated: 2022/03/23 14:25:33 by drossi           ###   ########.fr       */
+/*   Created: 2022/03/22 15:31:09 by drossi            #+#    #+#             */
+/*   Updated: 2022/03/22 17:57:01 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_SPAN_H
-# define FT_SPAN_H
+#include <stdlib.h>
+#include "ft_span.h"
 
-# include "ft_defs.h"
-
-typedef struct s_span
+size_t	ft_span_new(t_span *out, size_t c_item, size_t s_item)
 {
-	void	*data;
-	size_t	s_data;
-	size_t	s_item;
-	size_t	len;
-}	t_span;
-
-size_t	ft_span_new(t_span *out, size_t c_item, size_t s_item);
-void	ft_span_del(t_span *span);
-
-#endif
+	if (!out || c_item <= 0 || s_item <= 0)
+		return (-1);
+	out->s_item = s_item;
+	out->s_data = c_item * s_item;
+	out->len = 0;
+	out->data = malloc(out->s_data);
+	if (!out->data)
+	{
+		ft_span_del(out);
+		return (-1);
+	}
+	return (out->s_data);
+}
