@@ -6,7 +6,7 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 14:42:40 by drossi            #+#    #+#             */
-/*   Updated: 2022/03/25 23:03:17 by drossi           ###   ########.fr       */
+/*   Updated: 2022/03/27 16:57:43 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t	ft_span_res(t_span *span, size_t s_new)
 		s_used = s_new;
 		span->len = (size_t)(s_used / span->s_item);
 	}
-	ft_memcpy(span->data, res, s_used);
+	ft_memcpy(res, span->data, s_used);
 	free(span->data);
 	span->data = res;
 	span->s_data = s_new;

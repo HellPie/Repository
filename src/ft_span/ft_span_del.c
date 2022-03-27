@@ -6,7 +6,7 @@
 /*   By: drossi <drossi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:40:54 by drossi            #+#    #+#             */
-/*   Updated: 2022/03/25 23:03:10 by drossi           ###   ########.fr       */
+/*   Updated: 2022/03/27 16:57:03 by drossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_span_del(t_span *span)
 {
 	if (span)
 	{
-		ft_memdel(span->data);
+		ft_memdel(&span->data);
 		span->s_data = 0;
 		span->s_item = 0;
 		span->len = 0;
